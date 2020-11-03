@@ -1,0 +1,180 @@
+https://portal.aws.amazon.com/billing/signup?redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation
+https://portal.aws.amazon.com/billing/signup?redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation
+
+http://java.candidjava.com/tutorial/Java-program-to-find-second-largest-number-in-an-array.htm
+
+Q)What is the difference between SQL and PL SQL?
+While PL/SQL stands for Procedural Language/Structured Query Language. ...
+While PL/SQL can execute as a block of code. 
+SQL is used to code queries,DML and DDL statements. 
+While PL/SQL is used to code program blocks,triggers, procedures, functions and packagesDhttps
+1.) SQL is a data oriented language for selecting and manipulating sets of data. PL/SQL is a procedural language to create applications.
+
+2.) PL/SQL can be the application language just like Java or PHP can. PL/SQL might be the language we use to build, format and display those screens, web pages and reports.SQL may be the source of data for our screens, web pages and reports.
+
+3.) SQL is executed one statement at a time. PL/SQL is executed as a block of code.
+
+4.) SQL tells the database what to do (declarative), not how to do it. In contrast, PL/SQL tell the database how to do things (procedural).
+
+5.) SQL is used to code queries, DML and DDL statements. PL/SQL is used to code program blocks, triggers, functions, procedures and packages.
+
+6.) We can embed SQL in a PL/SQL program, but we cannot embed PL/SQL within a SQL statement.
+
+Q)differences between simple and complex views ?
+Here are few differences between simple and complex views.
+1. A Simple view selects from one table. A Complex view selects from one or more tables.
+2. A Simple view does not contain functions but Complex views contain functions.
+3. You can perform DML through Simple views but you cannot always perform DML through Complex views.
+
+Oops! Looks like all the calendar slots are booked.
+
+Allow us to get back to you shortly for scheduling your interview. 
+You can login again after a few hours to see if any new slots are available or you can also get in touch with us! 
+Get In Touch ×
+Calendar
+
+Q)HashMap Internal Structure working ?:
+HashMap stores the data in the form of key-value pairs. Each key-value pair is stored in an object of Entry<K, V> class.
+Entry<K, V> class is the static inner class of HashMap which is defined like below.
+static class Entry<K,V> implements Map.Entry<K,V> 
+{
+        final K key;
+        V value;
+        Entry<K,V> next;
+        int hash;
+        //Some methods are defined here
+}
+What Is Hashing?
+The whole HashMap data structure is based on the principle of Hashing. 
+Hashing is nothing but the function or algorithm or method which when applied on any object/variable returns an unique integer value
+representing that object/variable. This unique integer value is called hash code.
+Hash function or simply hash said to be the best if it returns the same hash code each time it is called on the same object. 
+Two objects can have same hash code.
+Whenever you insert new key-value pair using put() method, HashMap blindly doesn’t allocate slot in the table[] array. 
+Instead it calls hash function on the key. HashMap has its own hash function to calculate the hash code of the key.
+This function is implemented so that it overcomes poorly implemented hashCode() methods. Below is implementation code of hash().
+As you see, this inner class has four fields. key, value, next and hash.
+Let’s see how this code works step by step.
+
+Step 1 : First checks whether the key is null or not. If the key is null, it calls putForNullKey() method.
+table[0] is always reserved for null key. Because, hash code of null is 0.
+Step 2 : If the key is not null, then it calculates the hash code of the key by calling hash() method.
+Step 3 : Calls indexFor() method by passing the hash code calculated in step 2 and length of the table[] array. 
+This method returns index in table[] array for the specified key-value pair.
+Step 4 : After getting the index, it checks all keys present in the linked list at that index ( or bucket). 
+If the key is already present in the linked list, it replaces the old value with new value.
+Step 5 : If the key is not present in the linked list, it appends the specified key-value pair at the end of the linked list.
+
+Q)What happens if two keys have the same hashcode?
+The same collision resolution mechanism will be used here  key.equals(k)  will check until it is true, 
+if true it returns the value of it.
+First, it gets the hashcode of the key object which is passed and finds the bucket location.
+If the correct bucket is found it returns the value (e.value)
+If no match is found it returns null.
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
+
+public class SortByKeysHashMapExample 
+{
+    public static void main(String[] args) {
+
+        Map<Integer, String> unsortedMap = new HashMap<Integer, String>();
+        unsortedMap.put(5, "asd");
+        unsortedMap.put(1, "cfd");
+        unsortedMap.put(7, "gdf");
+        unsortedMap.put(55, "qwe");
+        unsortedMap.put(66, "weq");
+        unsortedMap.put(3, "wer");
+        unsortedMap.put(8, "yes");
+        unsortedMap.put(93, "nsa");
+        unsortedMap.put(50, "tes");
+        unsortedMap.put(12, "mds");
+        unsortedMap.put(43, "fsa");
+        
+        //Print the Elements of the Map before Sorting
+        System.out.println("Elements of the HashMap before Sorting");
+        printMap(unsortedMap);
+        
+        //Create a Treemap of unsortedMap to get it sorted
+        Map<Integer,String> sortedMap = new TreeMap<Integer,String>(unsortedMap);
+        
+        //Print the Elements of the Map after Sorting
+        System.out.println("Elements of the HashMap after Sorting");
+        printMap(sortedMap);
+        
+    }
+
+    public static void printMap(Map<Integer, String> map) {
+        System.out.println("**************************************");
+        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+            System.out.println("Key : " + entry.getKey() 
+                                      + " Value : " + entry.getValue());
+        }
+        System.out.println();
+    }
+}
+.......................................................
+1.Make constructor as private.
+2.Write a static method that has return type object of this singleton class. Here, 
+the concept of Lazy initialization in used to write this static method.
+// Java program implementing Singleton class
+// with method name as that of class
+class Singleton
+{
+	// static variable single_instance of type Singleton
+	private static Singleton single_instance=null;
+
+	// variable of type String
+	public String s;
+
+	// private constructor restricted to this class itself
+	private Singleton()
+	{
+		s = "Hello I am a string part of Singleton class";
+	}
+
+	// static method to create instance of Singleton class
+	public static Singleton Singleton()
+	{
+		// To ensure only one instance is created
+		if (single_instance == null)
+		{
+			single_instance = new Singleton();
+		}
+		return single_instance;
+	}
+}
+
+// Driver Code
+class Main
+{
+	public static void main(String args[])
+	{
+		// instantiating Singleton class with variable x
+		Singleton x = Singleton.Singleton();
+
+		// instantiating Singleton class with variable y
+		Singleton y = Singleton.Singleton();
+
+		// instantiating Singleton class with variable z
+		Singleton z = Singleton.Singleton();
+
+		// changing variable of instance x
+		x.s = (x.s).toUpperCase();
+
+		System.out.println("String from x is " + x.s);
+		System.out.println("String from y is " + y.s);
+		System.out.println("String from z is " + z.s);
+	//	System.out.println("\n");
+
+		// changing variable of instance x
+		z.s = (z.s).toLowerCase();
+
+		System.out.println("String from x is " + x.s);
+		System.out.println("String from y is " + y.s);
+		System.out.println("String from z is " + z.s);
+	}
+}
+....................................................................
